@@ -27,7 +27,7 @@ class TextEditor extends Component {
           modules={TextEditor.modules}
           formats={TextEditor.formats}
           bounds={'.app'}
-          placeholder={this.props.placeholder}
+          placeholder="Start typing here ..."
         />
       </div>
     )
