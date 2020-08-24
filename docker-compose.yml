@@ -1,0 +1,26 @@
+version: '3'
+services:
+  quill:
+    container_name: quill
+    build:
+      context: ./quill
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  draft:
+    container_name: draft
+    build:
+        context: ./draft
+        dockerfile: Dockerfile
+    volumes:
+        - '.:/app'
+        - '/app/node_modules'
+    ports:
+        - 3001:3001
+    environment:
+        - CHOKIDAR_USEPOLLING=true
