@@ -5,8 +5,9 @@ services:
     build:
       context: ./quill
       dockerfile: Dockerfile
+    network_mode: host
     volumes:
-      - '.:/app'
+      - './quill:/app'
       - '/app/node_modules'
     ports:
       - 3000:6100
@@ -17,8 +18,9 @@ services:
     build:
         context: ./draft
         dockerfile: Dockerfile
+    network_mode: host
     volumes:
-        - '.:/app'
+        - './draft:/app'
         - '/app/node_modules'
     ports:
         - 3000:6200
