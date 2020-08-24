@@ -10,5 +10,5 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 81
+CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 81;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
