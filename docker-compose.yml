@@ -9,7 +9,7 @@ services:
       - '.:/app'
       - '/app/node_modules'
     ports:
-      - 3001:3000
+      - 3000:6100
     environment:
       - CHOKIDAR_USEPOLLING=true
   draft:
@@ -21,6 +21,6 @@ services:
         - '.:/app'
         - '/app/node_modules'
     ports:
-        - 3001:3001
+        - 3000:6200
     environment:
         - CHOKIDAR_USEPOLLING=true
